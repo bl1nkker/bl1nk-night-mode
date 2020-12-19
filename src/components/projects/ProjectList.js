@@ -5,13 +5,9 @@ export default class ProjectList extends Component {
     render() {
         return (
             <div className='project-list section'>
-                <ProjectSummary />
-
-                <ProjectSummary />
-
-                <ProjectSummary />
-
-                <ProjectSummary />
+                {this.props.projects && this.props.projects.map( (project) => (
+                    <ProjectSummary project={project} key={project.id} />
+                ))}
             </div>
         )
     }
