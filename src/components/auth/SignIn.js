@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux' 
+import { Redirect } from 'react-router-dom'
+import { signIn } from './../../store/actions/authActions'
 
-export default class SignIn extends Component {
+class SignIn extends Component {
     state = {
         email:'',
         password:''
@@ -14,10 +17,18 @@ export default class SignIn extends Component {
 
     handleSubmit = (event) =>{
         event.preventDefault()
-        console.log(this.state)
+        this.props.signIn(this.state)
+        this.setState({
+            email: '',
+            password: ''
+        })
     }
     render() {
         return (
+           // If user is already authorized, he will be redirect to home page
+           this.props.auth.uid ? <Redirect to='/' />
+           :
+           // If not, the Sign In content will show
             <div className='container'>
                 <form onSubmit={this.handleSubmit} className='white'>
                     <h5 className='grey-text text-darken-3'>Sign In</h5>
@@ -34,9 +45,27 @@ export default class SignIn extends Component {
                     <div className='input-field'>
                         <button className='btn blue lighten-1 z-depth-0'>Login</button>
                     </div>
+                    <div class='red-text center'><strong>{this.props.authErr}</strong></div>
 
                 </form>                
             </div>
         )
     }
 }
+
+const mapStateToProps = (state) =>{
+    console.log(state)
+    return{
+        authErr: state.auth.authError,
+        auth: state.firebase.auth
+    }
+}
+
+const mapDispatchToProps = (dispatch) =>{
+    console.log(dispatch)
+    return {
+        signIn: (creds) => dispatch(signIn(creds))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn)
