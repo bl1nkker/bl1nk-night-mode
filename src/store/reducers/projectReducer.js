@@ -1,4 +1,4 @@
-import { CREATE_PROJECT, CREATE_PROJECT_ERROR } from "../types";
+import { CREATE_NOTIFICATION, CREATE_PROJECT, CREATE_PROJECT_ERROR } from "../types";
 
 const initState = {
     projects: [
@@ -12,8 +12,7 @@ const initState = {
 const projectReducer = (state=initState, action) => {
     switch (action.type) {
         case CREATE_PROJECT:
-            console.log(action.payload.project)
-            return state;
+            return {...state};
         case CREATE_PROJECT_ERROR:
             console.log('create project error', action.payload.error)
             return state
