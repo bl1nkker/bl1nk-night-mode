@@ -3,6 +3,8 @@ export const CREATE_PROJECT = "CREATE_PROJECT"
 export const CREATE_PROJECT_ERROR = "CREATE_PROJECT_ERROR"
 export const DELETE_PROJECT = "DELETE_PROJECT"
 export const DELETE_PROJECT_ERROR = "DELETE_PROJECT_ERROR"
+export const CHANGE_PROJECT = 'CHANGE_PROJECT'
+export const CHANGE_PROJECT_ERROR = 'CHANGE_PROJECT_ERROR'
 
 
 // Authentication
@@ -14,3 +16,5 @@ export const SIGNUP_ERROR = "SIGNUP_ERROR"
 
 // Working with Users
 export const CHANGE_ROLE = 'CHANGE_ROLE'
+
+
