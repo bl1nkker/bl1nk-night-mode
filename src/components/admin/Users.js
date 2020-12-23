@@ -1,0 +1,41 @@
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { firestoreConnect } from 'react-redux-firebase' // Connects component with firebase store
+import { compose } from 'redux'
+import { Redirect } from 'react-router-dom'
+import UserSummary from './UserSummary'
+
+class Users extends Component {
+    render() {
+        return (
+            <div className='project-list section users'>
+                {!this.props.users ? <h1>Loading...</h1>
+                :
+                this.props.users.map( user => (
+                    user.id !== this.props.auth.uid &&
+                    <div key={user.id}>
+                        <UserSummary user={user}/>
+                    </div>
+                ))
+                }
+                
+            </div>
+        )
+    }
+}
+
+const mapStateToProps = (state) => {
+    console.log(state)
+    return{
+        users: state.firestore.ordered.users,
+        auth: state.firebase.auth
+    }
+}
+
+// We use compose here, because we have 2 high-ordered functions (IMO 2 connections)^ connect (for Redux connection), and firebaseConect (for Firebase connection)
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([
+        { collection: 'users' }
+    ])
+)(Users)
