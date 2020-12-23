@@ -28,7 +28,7 @@ class UserSummary extends Component {
 
 const mapDispatchToProps = (dispatch) =>{
     return {
-        change: (role, new_role) => dispatch(changeRole(role, new_role))
+        change: (user, new_role) => dispatch(changeRole(user, new_role))
     }
 }
 
