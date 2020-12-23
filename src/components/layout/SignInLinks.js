@@ -10,10 +10,16 @@ class SignInLinks extends Component {
                 <ul className='right'>
                     <li><NavLink to='/create'>New Project</NavLink></li>
                     <li><a onClick={this.props.signOut}>LogOut</a></li>
-                    <li><NavLink to='/' className='btn btn-floating pink lighten-1'>NN</NavLink></li>
+                    <li><NavLink to='/' className='btn btn-floating pink lighten-1'>{this.props.profile.initials}</NavLink></li>
                 </ul>
             </div>
         )
+    }
+}
+
+const mapStateToProps = (state) =>{
+    return{
+        profile: state.firebase.profile
     }
 }
 
@@ -23,4 +29,4 @@ const mapDispatchToProps = (dispatch) =>{
     }
 }
 
-export default connect (null, mapDispatchToProps )(SignInLinks)
+export default connect (mapStateToProps, mapDispatchToProps )(SignInLinks)

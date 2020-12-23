@@ -26,7 +26,6 @@ class NavBar extends Component {
 }
 
 const mapStateToProps = (state) =>{
-    console.log(state.firebase.auth.isEmpty)
     return {
         auth: state.firebase.auth
     }
