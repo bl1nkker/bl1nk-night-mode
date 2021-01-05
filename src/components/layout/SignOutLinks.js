@@ -5,10 +5,12 @@ export default class SignOutLinks extends Component {
     render() {
         return (
             <div>
-                <ul className='right'>
-                    <li><NavLink to='/signup'>Sign Up</NavLink></li>
-                    <li><NavLink to='/signin'>Login</NavLink></li>
-                </ul>
+                <div className='navbar-buttons'>
+
+                    <NavLink className='navbar-button' to='/signup'>Sign Up</NavLink>
+                    
+                    <NavLink className='navbar-button' to='/signin'>Login</NavLink>
+                </div>
             </div>
         )
     }

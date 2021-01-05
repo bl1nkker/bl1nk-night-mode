@@ -5,13 +5,13 @@ import moment from 'moment'
 export default  class ProjectSummary extends Component {
 
     render() {
-        console.log()
+        console.log(this.props.project)
         return (
-            <div className='card z-depth-1 project-summary'>
-                    <div className='card-content grey-text text-darken-3'>
-                        <span className='card-title'>{this.props.project.title}</span>
-                        <p>Posted by the {this.props.project.authorFirstName} {this.props.project.authorLastName}</p>
-                        <p className='grey-text'>{moment(this.props.project.createdAt.toDate()).calendar()}</p>
+            <div >
+                    <div className='dashboard-content'>
+                        <h3 className=''>{this.props.project.title}</h3>
+                        <h2>{this.props.project.authorFirstName[0]}{this.props.project.authorLastName[0]}</h2>
+                        <p className=''>{moment(this.props.project.createdAt.toDate()).calendar()}</p>
                         
                     </div>
             </div>

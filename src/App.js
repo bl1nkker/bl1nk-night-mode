@@ -8,6 +8,10 @@ import SignUp from './components/auth/SignUp'
 import CreateProject from './components/projects/CreateProject'
 import Users from './components/admin/Users'
 
+import './css/dashboard.css'
+import './css/common.css'
+import './css/navbar.css'
+
 class App extends Component{
   render(){
     return (

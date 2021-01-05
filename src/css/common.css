@@ -1,0 +1,17 @@
+.standart-button 
+{
+    position: relative;
+    background: rebeccapurple;
+    margin: 20px 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 10%;
+    display: inline-block;
+    color: #fff;
+    transition: .5s;
+    visibility: hidden;
+    width:10em;
+    height: 3em;
+    text-align: center;
+}

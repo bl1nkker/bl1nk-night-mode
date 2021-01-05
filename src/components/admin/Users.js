@@ -4,12 +4,13 @@ import { firestoreConnect } from 'react-redux-firebase' // Connects component wi
 import { compose } from 'redux'
 import { Redirect } from 'react-router-dom'
 import UserSummary from './UserSummary'
+import Loader from './../layout/Loader'
 
 class Users extends Component {
     render() {
         return (
             <div className='project-list section users'>
-                {!this.props.users ? <h1>Loading...</h1>
+                {!this.props.users ? <Loader />
                 :
                 this.props.users.map( user => (
                     user.id !== this.props.auth.uid &&
