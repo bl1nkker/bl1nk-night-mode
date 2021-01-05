@@ -6,15 +6,30 @@ import { signOut } from './../../store/actions/authActions'
 class SignInLinks extends Component {
     render() {
         return (
-            <div>
-                <ul className='right'>
-                    <li><NavLink to='/create'>New Project</NavLink></li>
-                    <li><a onClick={this.props.signOut}>LogOut</a></li>
-                    {this.props.profile.role === 'admin' && <li><NavLink to='/users'>Users</NavLink></li>}
-                    <li><NavLink to='/' className='btn btn-floating pink lighten-1'>{this.props.profile.initials}</NavLink></li>
-                    
-                </ul>
-            </div>
+                <div className='navbar-buttons'>
+                        <NavLink className='navbar-button' to='/create'>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <div>New Project</div>
+                        </NavLink>                
+                        <NavLink to='signup' className='navbar-button' onClick={this.props.signOut}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <div>Log Out</div>
+                        </NavLink>
+                        {this.props.profile.role === 'admin' && <NavLink className='navbar-button' to='/users'>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <div>Users</div>
+                        </NavLink>}
+                        <NavLink to='/' className='navbar-user-icon'>{this.props.profile.initials}</NavLink>
+                </div>
         )
     }
 }

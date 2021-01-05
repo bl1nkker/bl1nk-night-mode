@@ -8,9 +8,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url(https://sun9-18.userapi.com/impg/gJ3ZnVgTivQps3AlwwV5acYwguS02czHJSdb1A/a5gYGKBUJSc.jpg?size=1280x1280&quality=96&sign=a0ee9934da4cf2d306a7abba8df1aa6e&type=album) no-repeat;
+  /* background: url(https://sun9-18.userapi.com/impg/gJ3ZnVgTivQps3AlwwV5acYwguS02czHJSdb1A/a5gYGKBUJSc.jpg?size=1280x1280&quality=96&sign=a0ee9934da4cf2d306a7abba8df1aa6e&type=album) no-repeat; */
   background-size: 100%;
-  background-color: aquamarine;
+  background-color: rgb(2, 2, 2);
   min-height: 100%;
 }
 
@@ -32,8 +32,10 @@ form{
 
 .users{
   display: flex;
+  flex-wrap: wrap;
 }
 .user-card{
   margin-left: 15em;
   margin-right: 15em;
 }
+

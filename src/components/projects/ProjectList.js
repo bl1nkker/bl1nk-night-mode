@@ -12,16 +12,17 @@ class ProjectList extends Component {
 
     render() {
         return (
-            <div className='project-list section'>
+            <div className='dashboard-container'>
                 {this.props.projects && this.props.projects.map( (project) => (
-                    <div key={project.id}>
-                        <Link  to={`/project/${project.id}`}>
-                            <ProjectSummary project={project}  />         
-                        </Link>
+                    <div className='dashboard-box' key={project.id}>
+                        
+                            <ProjectSummary project={project}  />  
+                            <Link className='dashboard-button read-more' to={`/project/${project.id}`}>Read More</Link>   
                         {this.props.currentUser.role === 'moderator' || this.props.currentUser.role === 'admin' ? 
-                            <button onClick={()=> this.deleteHandler(project.id)} className="waves-effect red btn">Delete Project</button>:
+                            <button className='dashboard-button delete' onClick={()=> this.deleteHandler(project.id)}>Delete Project</button>:
                             null}
                     </div>
+                    
                 ))}
             </div>
         )

@@ -14,14 +14,10 @@ class Dashboard extends Component {
             // Unauthorized users will not see this content
                 <Redirect to='/signin' />
                 :
-                <div className='dashboard container'>
-                    <div className='row'>
-                        <div className="col s12 m6">
+                <div className=''>
+                    <div>
+                        <div>
                             <ProjectList projects={this.props.projects}/>
-                        </div>
-
-                        <div className="col s12 m5 offset-m1">
-                            <Notification />
                         </div>
                     </div>
                 </div>
