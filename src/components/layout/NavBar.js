@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import SignInLinks from './SignInLinks'
 import SignOutLinks from './SignOutLinks'
 import { connect } from 'react-redux'
@@ -9,6 +9,7 @@ class NavBar extends Component {
     render() {
         return (
             <div className='navbar'>
+                <div className='navbar-left'>
                     <Link to='/' className='navbar-logo'>
                         <span>N</span>
                         <span>i</span>
@@ -20,6 +21,9 @@ class NavBar extends Component {
                         <span>d</span>
                         <span>e</span>
                     </Link>
+                    
+                    <NavLink to='/' className='navbar-user-icon mobile-profile'>{this.props.profile.initials}</NavLink>
+                </div>
                     {this.props.auth.uid ?
                     <SignInLinks /> 
                     :
@@ -32,7 +36,8 @@ class NavBar extends Component {
 
 const mapStateToProps = (state) =>{
     return {
-        auth: state.firebase.auth
+        auth: state.firebase.auth,
+        profile: state.firebase.profile
     }
 }
 

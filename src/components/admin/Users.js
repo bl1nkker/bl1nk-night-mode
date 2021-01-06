@@ -9,12 +9,14 @@ import Loader from './../layout/Loader'
 class Users extends Component {
     render() {
         return (
-            <div className='project-list section users'>
-                {!this.props.users ? <Loader />
+            <div className='users-container'>
+                
+                {!this.props.users ? 
+                <Loader />
                 :
                 this.props.users.map( user => (
                     user.id !== this.props.auth.uid &&
-                    <div key={user.id}>
+                    <div className='user-box' key={user.id}>
                         <UserSummary user={user}/>
                     </div>
                 ))

@@ -11,6 +11,11 @@ import Users from './components/admin/Users'
 import './css/dashboard.css'
 import './css/common.css'
 import './css/navbar.css'
+import './css/loader.css'
+import './css/admin.css'
+import './css/sign.css'
+import './css/creator.css'
+import './css/projectDetails.css'
 
 class App extends Component{
   render(){

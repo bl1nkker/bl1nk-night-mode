@@ -14,13 +14,7 @@ class Dashboard extends Component {
             // Unauthorized users will not see this content
                 <Redirect to='/signin' />
                 :
-                <div className=''>
-                    <div>
-                        <div>
-                            <ProjectList projects={this.props.projects}/>
-                        </div>
-                    </div>
-                </div>
+                <ProjectList projects={this.props.projects}/>
             
         )
     }

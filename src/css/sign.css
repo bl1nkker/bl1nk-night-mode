@@ -1,0 +1,104 @@
+:root
+{
+    --form-primary-color:#2ecc71;
+    --form-secondary-color:#3498db;
+    --form-bg-color:#191919;
+    --form-error-color:rgb(204, 68, 68);
+
+    --signup-border-color:rgb(255, 255, 111);
+    --signin-border-color: #2ecc71;
+}
+
+
+.signin-container,
+.signup-container
+{
+    margin:0;
+    padding: 0;
+}
+
+.signin-form,
+.signup-form
+{
+    width: 30%;
+    padding: 40px;
+    background-color: blanchedalmond;
+    margin: auto;
+    background: var(--form-bg-color);
+    
+    border-radius: 30px;
+    text-align: center;
+    transition: 2s;
+}
+
+.signup-form{border: 2px solid var(--signup-border-color);}
+.signin-form{border: 2px solid var(--signin-border-color);}
+
+.signin-title
+{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+#signin-input-email,
+#signin-input-password,
+#signup-input-firstName,
+#signup-input-lastName,
+#signup-input-email,
+#signup-input-password
+
+{
+    border: 0;
+    font-size: 16px;
+    background: none; 
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid var(--form-secondary-color);
+    width: 200px;
+    outline: none;
+    color: white;
+    font-weight: 100;
+    border-radius: 24px;
+    transition: .5s;
+}
+
+#signin-input-email:focus,
+#signin-input-password:focus,
+#signup-input-firstName:focus,
+#signup-input-lastName:focus,
+#signup-input-email:focus,
+#signup-input-password:focus
+{
+    width: 280px;
+    border-color: var(--form-primary-color);
+}
+
+.signin-submit-button
+{
+    border: 0;
+    font-size: 16px;
+    background: none; 
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid var(--form-primary-color);
+    outline: none;
+    color: white;
+    font-weight: 100;
+    padding: 14px 40px;
+    border-radius: 24px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.signin-submit-button:hover
+{
+    background-color: var(--form-primary-color);
+}
+
+.error-mode
+{
+    border: 2px solid var(--form-error-color);
+}

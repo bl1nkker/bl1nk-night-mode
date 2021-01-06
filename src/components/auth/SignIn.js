@@ -11,7 +11,8 @@ class SignIn extends Component {
 
     handleChange = (event) => {
         this.setState({
-            [event.target.id]: event.target.value
+            //!!! Костыль !!!
+            [event.target.name]: event.target.value
         })
     }
 
@@ -29,22 +30,15 @@ class SignIn extends Component {
            this.props.auth.uid ? <Redirect to='/' />
            :
            // If not, the Sign In content will show
-            <div className='container'>
-                <form onSubmit={this.handleSubmit} className='white'>
-                    <h5 className='grey-text text-darken-3'>Sign In</h5>
-                    <div className='input-field'>
-                        <label htmlFor='email'>Email</label>
-                        <input type='email' id='email' onChange={this.handleChange} value={this.state.email}/>
-                    </div>
+            <div className='signin-container'>
+                <form onSubmit={this.handleSubmit} className={`signin-form ${this.props.authErr && 'error-mode'}`}>
+                    <h1 className='signin-title'>LogIn</h1>
+                    
+                        <input name='email' type='email' id='signin-input-email' onChange={this.handleChange} value={this.state.email} placeholder='Email'/>
 
-                    <div className='input-field'>
-                        <label htmlFor='password'>Password</label>
-                        <input type='password' id='password' onChange={this.handleChange} value={this.state.password} />
-                    </div>
+                        <input  name='password' type='password' id='signin-input-password' onChange={this.handleChange} value={this.state.password} placeholder='Password'/>
 
-                    <div className='input-field'>
-                        <button className='btn blue lighten-1 z-depth-0'>Login</button>
-                    </div>
+                        <button className='signin-submit-button'>Login</button>
                     <div class='red-text center'><strong>{this.props.authErr}</strong></div>
 
                 </form>                

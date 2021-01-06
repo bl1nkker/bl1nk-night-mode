@@ -3,6 +3,10 @@
     --user-icon-color:rgb(5, 255, 201)
 }
 
+
+
+
+
 .navbar
 {
     display: flex;
@@ -18,6 +22,8 @@
     align-items: center;
     background-color: var(--user-icon-color);
     color: rgba(0, 0, 0, 0.788);
+    
+    filter: hue-rotate(110deg);
     border-radius: 50%;
     
     font-size: 20px;
@@ -48,6 +54,7 @@
     color: #111;
     font-size: 4em;
     font-weight: 300;
+    
 }
 
 .navbar-logo span
@@ -95,7 +102,8 @@
 
 }
 
-.navbar-buttons
+.navbar-buttons,
+.navbar-buttons-mobile
 {
     display: flex;
     justify-content: space-around;
@@ -104,7 +112,8 @@
     width: 100%;
 }
 
-.navbar-buttons .navbar-button
+.navbar-buttons .navbar-button,
+.navbar-buttons-mobile .navbar-button
 {
     position: relative;
     display: inline-block;
@@ -115,8 +124,10 @@
     font-weight: 300;
     text-decoration: none;
     text-transform: uppercase;
+
     width:150px;
     height: 75px;
+
     font-size: 10px;
 
     /* Hides content if it's not fits in box */
@@ -144,22 +155,26 @@
         0 0 200px #03e9f4;
 }
 
-.navbar-buttons .navbar-button:nth-child(1)
+.navbar-buttons .navbar-button:nth-child(1),
+.navbar-buttons-mobile .navbar-button:nth-child(1)
 {
     filter: hue-rotate(290deg);
 }
 
-.navbar-buttons .navbar-button:nth-child(2)
+.navbar-buttons .navbar-button:nth-child(2),
+.navbar-buttons-mobile .navbar-button:nth-child(2)
 {
     filter: hue-rotate(110deg);
 }
 
-.navbar-buttons .navbar-button:nth-child(3)
+.navbar-buttons .navbar-button:nth-child(3),
+.navbar-buttons-mobile .navbar-button:nth-child(3)
 {
     filter: hue-rotate(180deg);
 }
 
-.navbar-button span
+.navbar-button span,
+.navbar-buttons-mobile
 {
     position: absolute;
     display: block;
@@ -254,5 +269,61 @@
     50%, 100%
     {
         bottom: 100%;
+    }
+}
+
+@media only screen and (max-width:700px)
+{
+    .navbar-buttons
+    {
+        display: none;
+    }
+
+    .navbar
+    {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .navbar-buttons-mobile
+    {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        margin: 0 auto;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    /* .dashboard-container
+    {
+        width: 00px;
+    } */
+
+    .mobile-profile{display: flex; margin: auto 0}
+
+    .navbar-left
+    {
+        display: flex;
+        flex-direction: row;
+        padding: .5em;
+    }
+
+    .navbar-left a{margin-right: .3em;}
+    .navbar-buttons-mobile .navbar-button
+    {
+        width: 100%;
+    }
+
+    
+}
+
+@media only screen and (min-width: 700px)
+{
+    .navbar-buttons-mobile,
+    .mobile-profile
+    {
+        display: none;
     }
 }
