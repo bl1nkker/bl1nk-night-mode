@@ -10,18 +10,15 @@ class UserSummary extends Component {
     }
     render() {
         return (
-            <div className='card z-depth-1 project-summary user-card'>
-                    <div className='card-content grey-text text-darken-3'>
-                        <div className='btn btn-floating pink lighten-1'>{this.props.user.initials}</div>
+                <div className={`user-content ${this.props.user.role}`}>
+                        <div className='user-avatar'>{this.props.user.initials}</div>
                         <span>{this.props.user.firstName} {this.props.user.lastName}</span>
                         <p>Role: {this.props.user.role.charAt(0).toUpperCase() + this.props.user.role.slice(1)}</p>
                         <div className='buttons'>
-                            <button disabled={this.props.user.role === 'user'} onClick={() => this.changeHandler(this.props.user, 'user')} className='waves-effect red btn change-role-btn'>User</button>
-                            <button disabled={this.props.user.role === 'moderator'} onClick={() => this.changeHandler(this.props.user, 'moderator')} className='waves-effect yellow btn change-role-btn'>Moderator</button>
-                            <button disabled={this.props.user.role === 'admin'} onClick={() => this.changeHandler(this.props.user, 'admin')} className='waves-effect green btn change-role-btn'>Administrator</button>
+                            <button  disabled={this.props.user.role === 'user'} onClick={() => this.changeHandler(this.props.user, 'user')} className='user-button user'>User</button>
+                            <button className={'user-button moderator'} disabled={this.props.user.role === 'moderator'} onClick={() => this.changeHandler(this.props.user, 'moderator')}>Moderator</button>
                         </div>
-                    </div>
-            </div>
+                </div>
         )
     }
 }
