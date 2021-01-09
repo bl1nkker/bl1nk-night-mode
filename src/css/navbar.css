@@ -274,10 +274,7 @@
 
 @media only screen and (max-width:700px)
 {
-    .navbar-buttons
-    {
-        display: none;
-    }
+    .navbar-buttons{display: none;}
 
     .navbar
     {
@@ -295,12 +292,6 @@
         padding: 0 1rem;
         text-align: center;
     }
-
-    /* .dashboard-container
-    {
-        width: 00px;
-    } */
-
     .mobile-profile{display: flex; margin: auto 0}
 
     .navbar-left
@@ -315,7 +306,6 @@
     {
         width: 100%;
     }
-
     
 }
 
@@ -326,4 +316,6 @@
     {
         display: none;
     }
+
+    
 }

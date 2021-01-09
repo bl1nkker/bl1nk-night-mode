@@ -1,0 +1,175 @@
+:root
+{
+    --details-primary-color: rgb(255, 253, 136);
+    --details-secondary-color: rgb(140, 255, 136);
+    --details-content-color: rgba(38, 7, 58, 0.568);
+    --detail-title-color: rgb(110, 252, 193);
+
+    --details-edit-button-color: rgb(255, 253, 136);
+    --details-cancel-button-color: rgb(201, 33, 243);
+    --details-accept-button-color: rgb(75, 253, 223);
+}
+
+.project-details-container
+{
+    padding: 0;
+    margin: auto;
+    /* background: url('https://i.pinimg.com/564x/dc/71/84/dc71843023bd4b73cbed65ac8932558b.jpg'); */
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+    border: 2px solid var(--details-primary-color);
+    box-shadow: 0 0 25px var(--details-primary-color);
+    border-radius: 20px;
+    width:80%;
+    
+    height: 100%;
+}
+
+.project-details-box
+{
+    margin: 3em auto;
+    background: var(--details-content-color);
+    width:80%;
+    padding: 20px 40px;
+    transition: .5s;
+}
+
+.project-details-title
+{
+    text-align: center;
+    color: var(--details-primary-color);
+}
+
+.project-details-content
+{
+    font-size: 24px;
+    font-weight: 100;
+    margin-top: 2em;
+    color: white
+}
+
+.project-details-info
+{
+    background: var(--details-content-color);
+    color: rgb(178, 189, 189);
+    text-align: center;
+}
+
+.project-details-button
+{
+    position: relative;
+    
+    margin: 20px 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 10%;
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    transition: .5s;
+    width:10em;
+    height: 3em;
+    text-align: center;
+}
+
+.project-details-edit-buttons
+{
+    padding: 0 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-details-button:hover
+{
+    box-shadow: 
+    0 0 30px var(--details-edit-button-color),
+    0 0 60px var(--details-edit-button-color)
+}
+.edit-button{background: var(--details-edit-button-color) ; border: 1px solid var(--details-edit-button-color);}
+.cancel-button{background: var(--details-cancel-button-color) ; border: 1px solid var(--details-cancel-button-color);}
+.accept-button{background: var(--details-accept-button-color) ; border: 1px solid var(--details-accept-button-color);}
+
+.edit-button:hover
+{
+    box-shadow: 
+    0 0 30px var(--details-edit-button-color),
+    0 0 60px var(--details-edit-button-color)
+}
+
+.accept-button:hover
+{
+    box-shadow: 
+    0 0 30px var(--details-accept-button-color),
+    0 0 60px var(--details-accept-button-color)
+}
+
+.cancel-button:hover
+{
+    box-shadow: 
+    0 0 30px var(--details-cancel-button-color),
+    0 0 60px var(--details-cancel-button-color)
+}
+
+#project-details-edit-title
+{
+    border: 0;
+    font-size: 24px;
+    background: none; 
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid var(--details-primary-color);
+    width: 350px;
+    outline: none;
+    color: white;
+    font-weight: 100;
+    border-radius: 24px;
+    transition: .5s;
+}
+
+#project-details-edit-content
+{
+    border: 0;
+    font-size: 24px;
+    background: none; 
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid var(--details-primary-color);
+    width: 350px;
+    height: fit-content;
+    padding: 10px 20px;
+    outline: none;
+    color: white;
+    font-weight: 100;
+    border-radius: 24px;
+    transition: .5s;
+}
+
+#project-details-edit-content:focus,
+#project-details-edit-title:focus
+{
+    width: 500px;
+    border-color: var( --details-secondary-color);
+}
+
+@media only screen and (max-width: 700px)
+{
+    .project-details-container{width: 100%;}
+    .project-details-title{font-size: 24px;}
+    .project-details-content{font-size: 16px;}
+
+    /* Edit Mode*/
+    #project-details-edit-title,
+    #project-details-edit-content
+    {
+        width: 150px;
+        font-size: 10px;
+    }
+
+    #project-details-edit-title:focus,
+    #project-details-edit-content:focus
+    {
+        width: 200px;
+    }
+}

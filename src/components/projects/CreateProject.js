@@ -11,7 +11,7 @@ class CreateProject extends Component {
 
     handleChange = (event) => {
         this.setState({
-            [event.target.id]: event.target.value
+            [event.target.name]: event.target.value
         })
     }
 
@@ -35,7 +35,7 @@ class CreateProject extends Component {
 
                     <input name='title' type='text' id='creator-input-title' onChange={this.handleChange} value={this.state.firstName} placeholder='Input yout Title'/>
 
-                    <textarea name='content' id='creator-input-content' onChange={this.handleChange} className='materialize-textarea' placeholder='Input yout Content'></textarea>
+                    <textarea name='content' wrap='hard' id='creator-input-content' onChange={this.handleChange} className='materialize-textarea' placeholder='Input yout Content'></textarea>
 
                     <div className='input-field'>
                         <button className='creator-submit-button'>Create</button>

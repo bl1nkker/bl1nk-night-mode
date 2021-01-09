@@ -20,7 +20,7 @@
 .signin-form,
 .signup-form
 {
-    width: 30%;
+    width: 400px;
     padding: 40px;
     background-color: blanchedalmond;
     margin: auto;
@@ -101,4 +101,34 @@
 .error-mode
 {
     border: 2px solid var(--form-error-color);
+}
+
+@media only screen and (max-width: 700px)
+{
+    .signin-container,.signup-container{width: 100%;}
+    .signin-form,.signup-form{margin: 0 auto; width: 100%; }
+
+    #signin-input-email,
+    #signin-input-password,
+    #signup-input-firstName,
+    #signup-input-lastName,
+    #signup-input-email,
+    #signup-input-password
+    {
+        width: 150px;
+        border-color: var(--form-secondary-color);
+        font-size: 10px;
+    }
+
+    #signin-input-email:focus,
+    #signin-input-password:focus,
+    #signup-input-firstName:focus,
+    #signup-input-lastName:focus,
+    #signup-input-email:focus,
+    #signup-input-password:focus    
+    {
+        width: 180px;
+        border-color: var(--form-primary-color);
+    }
+
 }
