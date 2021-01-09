@@ -23,7 +23,7 @@ class ProjectDetails extends Component {
     }
 
     handleChange = (event) =>{
-        this.setState({[event.target.id]:event.target.value})
+        this.setState({[event.target.name]:event.target.value})
     }
 
     submitChanges = (project) =>{
@@ -44,38 +44,34 @@ class ProjectDetails extends Component {
                     (!this.state.editMode ? 
 
                         //Not Edit mode
-                        (<div className='container section project-details'>
-                            <div className='card z-depth-0'>
-                                <div className='card-content'>
-                                    <span className='card-title'>{this.props.project.title}</span>
-                                    <p>{this.props.project.content}</p>
+                        (<div className='project-details-container'>
+                            <div className='project-details-box'>
+                                <div className='project-details-main'>
+                                    <h1 className='project-details-title'>{this.props.project.title}</h1>
+                                    <p className='project-details-content'>{this.props.project.content}</p>
                                 </div>
         
-                                <div className='card-action grey lighten-3 grey-text'>
+                                <div className='project-details-info'>
                                     <div>Posted by {this.props.project.authorFirstName} {this.props.project.authorLastName}</div> 
                                     <div>{moment(this.props.project.createdAt.toDate()).calendar()}</div>
                                 </div>
         
                                 {this.props.project.authorId === this.props.auth.uid || this.props.profile.role === 'admin'? 
-                                    <button onClick={() => this.handleEdit(this.state.editMode)} className="waves-effect pink btn">Edit Project</button>:null}
+                                    <button onClick={() => this.handleEdit(this.state.editMode)} className="project-details-button edit-button">Edit Project</button>:null}
                             </div>
                         </div>)
                         :
 
                         // Edit Mode
-                        (<div className='container section project-details'>
-                            <div className='card z-depth-0'>
-                                <div className='card-content'>
-                                    <div className='input-field'>
-                                        <input type='text' id='title' onChange={(event) => this.handleChange(event)} value={this.state.title} />
+                        (<div className='project-details-container'>
+                            <div className='project-details-box'>
+                                    <input name='title' type='text' id='project-details-edit-title' onChange={(event) => this.handleChange(event)} value={this.state.title} />
+                                    <textarea name='content' wrap='hard' type='text' id='project-details-edit-content' onChange={(event) => this.handleChange(event)} value={this.state.content} />
+                                    <div className='project-details-edit-buttons'>
+                                        <button onClick={() => this.handleEdit(this.state.editMode)}  className="project-details-button cancel-button">Cancel</button>
+                                        <button onClick={() => this.submitChanges(this.props.project)}  className="project-details-button accept-button">Accept</button>
                                     </div>
-                                    <div className='input-field'>
-                                        <input type='text' id='content' onChange={(event) => this.handleChange(event)} value={this.state.content} />
-                                    </div>
-                                </div>
-                                    <button onClick={() => this.handleEdit(this.state.editMode)}  className="waves-effect pink btn">Cancel</button>
-                                    <button onClick={() => this.submitChanges(this.props.project)}  className="waves-effect blue btn">Accept</button>
-                            </div>
+                                   </div>
                         </div>)
                         )
                     :

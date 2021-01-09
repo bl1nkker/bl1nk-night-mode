@@ -18,11 +18,12 @@
     grid-gap: 0 40px;
 }
 
+
 .dashboard-container .dashboard-box
 {
     position: relative;
     padding-top: 70px;
-    height: 380px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -146,8 +147,10 @@
 .dashboard-container .dashboard-box:nth-child(2n)::before{background: linear-gradient(115deg, #2f00ff, #19e6e6);}
 .dashboard-container .dashboard-box:nth-child(3n)::before{background: linear-gradient(315deg, #09ff00, #19e697);}
 .dashboard-container .dashboard-box:nth-child(4n)::before{background: linear-gradient(315deg, #fffb00, #e69e19);}
-.dashboard-container .dashboard-box:nth-child(5n)::before{background: linear-gradient(315deg, #ff00b3, #8319e6);}
-.dashboard-container .dashboard-box:nth-child(4n)::before{background: linear-gradient(315deg, #fffb00, #e69e19);}
+.dashboard-container .dashboard-box:nth-child(5n)::before{background: linear-gradient(315deg, #06f184, #8319e6);}
+.dashboard-container .dashboard-box:nth-child(6n)::before{background: linear-gradient(315deg, #ff3300, #49e619);}
+.dashboard-container .dashboard-box:nth-child(7n)::before{background: linear-gradient(315deg, #e5ff00, #191ce6);}
+.dashboard-container .dashboard-box:nth-child(8n)::before{background: linear-gradient(315deg, #ff00bf, #19cee6);}
 
 @media only screen and (max-width: 700px)
 {

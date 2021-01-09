@@ -22,7 +22,7 @@ class NavBar extends Component {
                         <span>e</span>
                     </Link>
                     
-                    <NavLink to='/' className='navbar-user-icon mobile-profile'>{this.props.profile.initials}</NavLink>
+                    {this.props.auth.uid && <NavLink to='/' className='navbar-user-icon mobile-profile'>{this.props.profile.initials}</NavLink>}
                 </div>
                     {this.props.auth.uid ?
                     <SignInLinks /> 

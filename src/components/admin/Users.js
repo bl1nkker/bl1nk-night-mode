@@ -16,7 +16,7 @@ class Users extends Component {
                 :
                 this.props.users.map( user => (
                     user.id !== this.props.auth.uid &&
-                    <div className='user-box' key={user.id}>
+                    <div key={user.id}>
                         <UserSummary user={user}/>
                     </div>
                 ))

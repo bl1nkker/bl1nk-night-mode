@@ -15,7 +15,7 @@
 
 .creator-form
 {
-    width: 50%;
+    width: 600px;
     padding: 40px;
     background-color: blanchedalmond;
     margin: auto;
@@ -25,6 +25,7 @@
     border-radius: 30px;
     text-align: center;
     transition: 2s;
+    margin-bottom: 1em ;
 }
 
 .creator-title
@@ -101,4 +102,28 @@
     box-shadow: 0 0 10px var(--form-primary-color),
     0 0 25px var(--form-primary-color),
     0 0 75px var(--form-primary-color);
+}
+
+@media only screen and (max-width: 700px)
+{
+    .creator-container{width: 100%;}
+    .creator-form{width: 100%;margin: 0 auto; position: static;}
+    .creator-title{font-size: 40px;}
+    .creator-submit-button{font-size: 10px;}
+
+
+    #creator-input-title,
+    #creator-input-content
+    {
+        width: 150px;
+        border-color: var(--form-secondary-color);
+        font-size: 10px;
+    }
+
+    #creator-input-title:focus,
+    #creator-input-content:focus
+    {
+        width: 200px;
+        border-color: var(--form-primary-color);
+    }
 }
