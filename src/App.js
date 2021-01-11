@@ -7,6 +7,7 @@ import SignIn from './components/auth/SignIn'
 import SignUp from './components/auth/SignUp'
 import CreateProject from './components/projects/CreateProject'
 import Users from './components/admin/Users'
+import ProfilePage from './components/profile/ProfilePage'
 
 import './css/dashboard.css'
 import './css/common.css'
@@ -16,6 +17,8 @@ import './css/admin.css'
 import './css/sign.css'
 import './css/creator.css'
 import './css/projectDetails.css'
+import './css/profilePage.css'
+
 
 class App extends Component{
   render(){
@@ -24,6 +27,7 @@ class App extends Component{
         <div className='App'>
           <NavBar />
           <Switch>
+            <Route path='/profile' component={ProfilePage} />
             <Route path='/' exact component={Dashboard} /> 
             <Route path='/project/:id' component={ProjectDetails} />
             <Route path='/signin' component={SignIn} />

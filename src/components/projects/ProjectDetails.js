@@ -27,7 +27,6 @@ class ProjectDetails extends Component {
     }
 
     submitChanges = (project) =>{
-        console.log(this.props, this.state)
         this.props.editProject(this.props.match.params.id, this.state)
         this.setState({editMode:false})
     }

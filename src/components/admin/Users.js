@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase' // Connects component with firebase store
 import { compose } from 'redux'
-import { Redirect } from 'react-router-dom'
 import UserSummary from './UserSummary'
 import Loader from './../layout/Loader'
 
