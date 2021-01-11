@@ -32,7 +32,6 @@ export const signOut = () =>{
 // newUser variable we will pass throught our function in SignUp.js component. It will contain certain amount of properties
 export const signUp = (newUser) =>{
     return (dispatch, getState, {getFirebase, getFirestore}) =>{
-
         // Creating var for Firebase
         const firebase = getFirebase()
 

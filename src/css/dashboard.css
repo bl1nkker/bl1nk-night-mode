@@ -41,7 +41,6 @@
     left: -2px;
     bottom: -2px;
     right: -2px;
-    background: rgb(0, 255, 157);
     transform: skew(2deg, 2deg);
     z-index: -1;
 }

@@ -31,7 +31,7 @@ class SignInLinks extends Component {
                             <span></span>
                             <div>Log Out</div>
                         </NavLink>
-                        <NavLink to='/' className='navbar-user-icon'>{this.props.profile.initials}</NavLink>
+                        <NavLink to='/profile' className='navbar-user-icon'>{this.props.profile.initials}</NavLink>
                 </div>
 
                 <div className='navbar-buttons-mobile'>
